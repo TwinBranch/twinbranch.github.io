@@ -1,18 +1,22 @@
-var team1 = "Cowboys";
-var team2 = "Giants";
-var cPlayers = "Dak Prescott Ezekiel Elliot";
-var gPlayers = "Eli Manning, Odell Beckham Jr.";
+window.onload = function () {
+
+  var team1 = "Cowboys";
+  var team2 = "Giants";
+  var cPlayers = "Dak Prescott Ezekiel Elliot";
+  var gPlayers = "Eli Manning, Odell Beckham Jr.";
 
 
-if (team1 == "Cowboys") {
+    if (team1 == "Cowboys") {
 
-  document.write(cPlayers);
+        document.write(cPlayers);
+
+      }
+
+    else {
+
+        document.write(gPlayers);
+
+      }
+  document.getElementById("printArea").innerHTML = "<div><p>" + cPlayers + "</p></div>";
 
 }
-
-else {
-
-  document.write(gPlayers);
-
-}
-document.getElementById("printArea").innerHTML = "<div><p>" + cPlayers + "</p></div>";
