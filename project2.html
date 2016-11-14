@@ -10,7 +10,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="game.js"></script>
 
 	</head>
 	<body>
@@ -24,12 +23,38 @@
 							<a href="index.html" class="logo">
 								<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Breakout Game</span>
 							</a>
+							<nav id="menu">
+								<h2>Menu</h2>
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="generic.html">Ipsum veroeros</a></li>
+									<li><a href="generic.html">Tempus etiam</a></li>
+									<li><a href="generic.html">Consequat dolor</a></li>
+									<li><a href="elements.html">Elements</a></li>
+								</ul>
+							</nav>
+							<nav>
+								<ul>
+									<li><a href="#menu">Menu</a></li>
+								</ul>
+							</nav>
 
-<button onclick="">
+					</div>
+				</header>
+
+<button onclick="buttonPress();">
 
 	<h1>Click Me to Start</h1>
 
 </button>
+
+<div id="main">
+
+
+<canvas id="myCanvas" width="480" height="320"></canvas>
+
+
+	</div>
 
 				<script>
 				var canvas = document.getElementById("myCanvas");
@@ -37,8 +62,8 @@
 				var ballRadius = 10;
 				var x = canvas.width/2;
 				var y = canvas.height-30;
-				var dx = 2;
-				var dy = -2;
+				var dx = 0;
+				var dy = 0;
 				var paddleHeight = 10;
 				var paddleWidth = 75;
 				var paddleX = (canvas.width-paddleWidth)/2;
@@ -53,6 +78,7 @@
 				var brickOffsetLeft = 30;
 				var score = 0;
 				var lives = 3;
+				var buttonClick = 0;
 
 				var bricks = [];
 				for(c=0; c<brickColumnCount; c++) {
@@ -65,6 +91,24 @@
 				document.addEventListener("keydown", keyDownHandler, false);
 				document.addEventListener("keyup", keyUpHandler, false);
 				document.addEventListener("mousemove", mouseMoveHandler, false);
+
+				function buttonPress()
+				{
+				if (buttonClick == 0)
+				 		{
+							start();
+						}
+				else
+						{
+						}
+				}
+
+				function start() {
+
+					dx = 20;
+					dy = -20;
+					buttonClick = 1;
+				}
 
 				function keyDownHandler(e) {
 					if(e.keyCode == 39) {
@@ -98,7 +142,7 @@
 													b.status = 0;
 													score++;
 													if(score == brickRowCount*brickColumnCount) {
-															alert("YOU WIN, CONGRATS!");
+															//alert("YOU WIN, CONGRATS!");
 															document.location.reload();
 													}
 											}
@@ -171,7 +215,7 @@
 							else {
 									lives--;
 									if(!lives) {
-											alert("GAME OVER");
+											//alert("GAME OVER");
 											document.location.reload();
 									}
 									else {
@@ -201,39 +245,13 @@
 <!--''-->
 
 
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
-						</div>
-					</header>
-
-
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav>
-
-
-					<div id="main">
-
-
-            <div style = "height:500px;">
-							<div id = "printArea"></div>
 
 
 
 
 
-            </div>
+
+
 
 
 
