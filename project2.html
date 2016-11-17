@@ -41,7 +41,61 @@
 
 					</div>
 				</header>
+				<form>
+							    <h1>Please enter data</h1>
+									<!--p id="currentScore" type="text">1029pts</p-->
+							    <input id="title" type="text" placeholder="Title" />
+							    <input id="name" type="text" placeholder="Name" />
+							    <input id="tickets" type="text" placeholder="Tickets" />
 
+							    <input type="button" value="Save/Show" onclick="insert()" /3>
+							  </form>
+
+							  <div id="display"></div>
+
+								<script>
+								// This area declares the empty array areas as place holders.
+								var titles  = [];
+								var names   = [];
+								var tickets = [];
+
+								//alert(colors[]);
+								//var score = [];
+
+								// The below gets all of the all of the elements needed from the HTML above by their ID.
+								var titleInput  = document.getElementById("title");
+								var nameInput   = document.getElementById("name");
+								var ticketInput = document.getElementById("tickets");
+								//var scoreInput = document.getElementById.innerHTML("currentScore");
+
+								var messageBox  = document.getElementById("display");
+
+								// The function below inserts the values into each of the empty arrays.
+								function insert ( ) {
+								 titles.push( titleInput.value );
+								 names.push( nameInput.value );
+								 tickets.push( ticketInput.value );
+							// score.push( scoreInput.value );
+
+								 clearAndShow();
+								}
+							// This function clears out the fields when the submit button is clicked.
+								function clearAndShow () {
+								  titleInput.value = "";
+								  nameInput.value = "";
+								  ticketInput.value = "";
+							//	scoreInput.value = "";
+
+								  // Show our output
+								  messageBox.innerHTML = "";
+
+								  messageBox.innerHTML += "Titles: " + titles.join(", ") + "<br/>";
+								  messageBox.innerHTML += "Names: " + names.join(", ") + "<br/>";
+								  messageBox.innerHTML += "Tickets: " + tickets.join(", ") + "<br/>";
+						//		messageBox.innerHTML += "Score:" + score.join(",") + "<br/>";
+								}
+
+								</script>
 <button onclick="buttonPress();">
 
 	<h1>Click Me to Start</h1>
@@ -50,13 +104,13 @@
 
 <div id="main">
 
-
 <canvas id="myCanvas" width="480" height="320"></canvas>
 
 
 	</div>
 
 				<script>
+
 				var canvas = document.getElementById("myCanvas");
 				var ctx = canvas.getContext("2d");
 				var ballRadius = 10;
