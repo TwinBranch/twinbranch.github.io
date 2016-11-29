@@ -21,10 +21,7 @@ function ReadCookie()
 
        }
 
-Write Cookie
----
-
-        function WriteCookie()
+      function WriteCookie()
         {
            if( document.myform.customer.value == "" ){
               alert("Enter some value!");
